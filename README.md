@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ⚡ Boltdown
 
 <div align="center">
@@ -234,9 +235,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you find **Boltdown** useful, please give it a ⭐ star on GitHub! It helps others discover this project.
 
-### Keywords for SEO
-`torrent downloader`, `web torrent client`, `django torrent`, `aria2 web ui`, `bittorrent client`, `magnet link downloader`, `python torrent downloader`, `open source torrent`, `torrent web interface`, `aria2c`, `django application`, `p2p downloader`, `fast torrent client`, `crossplatform torrent`, `torrent manager`
-
 ---
 
 <div align="center">
@@ -246,3 +244,6 @@ If you find **Boltdown** useful, please give it a ⭐ star on GitHub! It helps o
 [Report Bug](https://github.com/yourusername/boltdown/issues) • [Request Feature](https://github.com/yourusername/boltdown/issues) • [Documentation](https://github.com/yourusername/boltdown/wiki)
 
 </div>
+=======
+# Boltdown
+>>>>>>> bb54ff8a147eedf48004b00d45786b9b874d1b30
