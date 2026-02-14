@@ -237,7 +237,7 @@ This project is intended for **educational purposes only**. Users are responsibl
 
 <div align="center">
 
-**Made with ⚡ by the Boltdown Team**
+**Made with ⚡ by Mohammad Ameen Barech**
 
 [Report Bug](https://github.com/yourusername/boltdown/issues) • [Request Feature](https://github.com/yourusername/boltdown/issues) • [Documentation](https://github.com/yourusername/boltdown/wiki)
 
