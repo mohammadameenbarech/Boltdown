@@ -1,0 +1,88 @@
+{% extends 'downloader/base.html' %}
+
+{% block content %}
+<header>
+    <h1>Dashboard</h1>
+    <button class="btn-primary" id="addTorrentBtn"><i class="fa-solid fa-plus"></i> Add Torrent</button>
+</header>
+
+<div class="stats-cards">
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-arrow-down"></i></div>
+        <div class="card-info">
+            <h3>Download Speed</h3>
+            <span id="total-dl">{{ task.download_speed|filesizeformat}}/s</span>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-arrow-up"></i></div>
+        <div class="card-info">
+            <h3>Upload Speed</h3>
+            <span id="total-ul">{{ task.upload_speed|filesizeformat}}/s</span>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-server"></i></div>
+        <div class="card-info">
+            <h3>Active Tasks</h3>
+            <span id="active-tasks">{{ tasks.count }}</span>
+        </div>
+    </div>
+</div>
+
+<div class="torrent-list" id="torrent-list">
+    {% for task in tasks %}
+    <div class="torrent-item" id="task-{{ task.id }}">
+        <div class="torrent-icon">
+            <i class="fa-regular fa-file"></i>
+        </div>
+        <div class="torrent-details">
+            <div class="torrent-header">
+                <span class="torrent-name">{{ task.name|default:task.info_hash }}</span>
+                <span class="torrent-status {{ task.status }}">{{ task.status|title }}</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: {{ task.progress }}%"></div>
+            </div>
+            <div class="torrent-meta">
+                <span>{{ task.progress|floatformat:1 }}%</span>
+                <span class="speed-down"><i class="fa-solid fa-arrow-down"></i> {{
+                    task.download_speed|filesizeformat}}/s</span>
+                <span class="speed-up"><i class="fa-solid fa-arrow-up"></i> {{
+                    task.upload_speed|filesizeformat}}/s</span>
+                <span class="eta">ETA: {{ task.eta }}s</span>
+            </div>
+        </div>
+        <div class="torrent-actions">
+            {% if task.status == 'paused' %}
+            <a href="{% url 'control_torrent' task.id 'resume' %}" class="btn-icon"><i class="fa-solid fa-play"></i></a>
+            {% else %}
+            <a href="{% url 'control_torrent' task.id 'pause' %}" class="btn-icon"><i class="fa-solid fa-pause"></i></a>
+            {% endif %}
+            <a href="{% url 'control_torrent' task.id 'delete' %}?delete_files=true" class="btn-icon delete"><i
+                    class="fa-solid fa-trash"></i></a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div id="addModal" class="modal">
+    <div class="modal-content glass-card">
+        <span class="close">&times;</span>
+        <h2>Add Torrent</h2>
+        <form action="{% url 'add_torrent' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Magnet Link</label>
+                <input type="text" name="magnet_link" placeholder="magnet:?xt=urn:btih:...">
+            </div>
+            <div class="divider">OR</div>
+            <div class="form-group">
+                <label>Torrent File</label>
+                <input type="file" name="torrent_file" accept=".torrent">
+            </div>
+            <button type="submit" class="btn-primary">Start Download</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
