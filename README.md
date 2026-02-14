@@ -40,11 +40,6 @@
 - 🔒 **Secure** - Environment-based configuration, no hardcoded secrets
 - 🐳 **Docker Ready** - Easy deployment (coming soon)
 
-## 🖼️ Demo
-
-![Dashboard](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=Dashboard+Screenshot)
-
-*Premium glassmorphism interface with real-time download tracking*
 
 ## 🚀 Quick Start
 
