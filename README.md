@@ -229,6 +229,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you find **Boltdown** useful, please give it a ⭐ star on GitHub! It helps others discover this project.
 
+## ⚠️ Disclaimer
+
+This project is intended for **educational purposes only**. Users are responsible for ensuring they comply with copyright and local laws when using torrents.
 
 ---
 
@@ -239,3 +242,4 @@ If you find **Boltdown** useful, please give it a ⭐ star on GitHub! It helps o
 [Report Bug](https://github.com/yourusername/boltdown/issues) • [Request Feature](https://github.com/yourusername/boltdown/issues) • [Documentation](https://github.com/yourusername/boltdown/wiki)
 
 </div>
+
